@@ -1,0 +1,45 @@
+/* create-entry.component.css */
+
+/* Styling for the form container */
+.form {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f8f8f8;
+  }
+  
+  /* Styling for form labels */
+  .form-group label {
+    font-weight: bold;
+  }
+  
+  /* Styling for form input fields and textarea */
+  .form-control {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+  }
+  
+  /* Styling for the Create or Update Entry button */
+  .btn-primary {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 3px;
+    cursor: pointer;
+  }
+  
+  .btn-primary:hover {
+    background-color: #0056b3;
+  }
+  
+  /* Optional: Add spacing between form elements */
+  .form-group:not(:last-child) {
+    margin-bottom: 20px;
+  }
+  

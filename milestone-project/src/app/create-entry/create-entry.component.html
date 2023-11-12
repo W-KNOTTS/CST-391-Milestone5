@@ -1,0 +1,26 @@
+<!-- create-entry.component.html -->
+<div class="form">
+    <h4>Update or Add a Verse to a Book</h4>
+    <div class="form-group">
+      <label for="id">ID:</label>
+      <input type="number" id="id" [(ngModel)]="id" name="id" class="form-control">
+    </div>
+    <div class="form-group">
+      <label for="book">Book:</label>
+      <input type="text" id="book" [(ngModel)]="book" name="book" class="form-control">
+    </div>
+    <div class="form-group">
+      <label for="chapter">Chapter:</label>
+      <input type="number" id="chapter" [(ngModel)]="chapter" name="chapter" class="form-control">
+    </div>
+    <div class="form-group">
+      <label for="verse">Verse:</label>
+      <input type="number" id="verse" [(ngModel)]="verse" name="verse" class="form-control">
+    </div>
+    <div class="form-group">
+      <label for="text">Text:</label>
+      <textarea id="text" [(ngModel)]="text" name="text" class="form-control"></textarea>
+    </div>
+    <button (click)="createEntry()" class="btn btn-primary">Create or Update Entry</button>
+  </div>
+  

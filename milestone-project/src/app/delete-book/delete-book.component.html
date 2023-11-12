@@ -1,0 +1,13 @@
+<!--delete-book.component.html-->
+<div class="delete-book-container">
+    <h2>Delete Book</h2>
+    <form (submit)="deleteBook()">
+      <div class="form-group">
+        <label for="order">Book Order:</label>
+        <input type="number" id="order" name="order" [(ngModel)]="order" required>
+      </div>
+      <button type="submit" class="btn btn-danger">Delete</button>
+    </form>
+    <div *ngIf="message" class="delete-message">{{ message }}</div>
+  </div>
+  

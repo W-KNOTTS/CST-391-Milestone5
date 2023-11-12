@@ -1,0 +1,54 @@
+/* search.component.css */
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.search-bar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.search-bar input,
+.search-bar select,
+.search-bar button {
+    margin-bottom: 10px;
+}
+
+/* Remove max-width property to allow cards to arrange horizontally */
+.search-results {
+    width: 80%; /* Set the width to 80% of the container width */
+    text-align: center;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Create a flexible grid layout */
+    gap: 20px; /* Add gap between grid items */
+    justify-content: center; /* Center the grid horizontally */
+}
+
+.grid-item {
+    background-color: #f7f7f7;
+    padding: 10px;
+    border-radius: 10px; /* Round the corners */
+    box-shadow: 0 2px 4px rgba(214, 17, 204, 0.726);
+}
+
+/* Update card styling */
+.card {
+    padding: 0; /* Remove padding inside card body */
+}
+
+.card-title {
+    font-size: 1.25rem; /* Increase font size for card title */
+}
+
+.card p {
+    font-weight: bold;
+    color: #d4d4d4; /* Red color for "No results found" message */
+}

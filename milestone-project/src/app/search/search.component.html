@@ -1,0 +1,38 @@
+<!-- search.component.html -->
+<link rel="stylesheet" href="./search.component.css">
+<div class="container">
+    <h2>Search for Book or Verse</h2>
+  <div class="search-bar">
+    <input type="text" [(ngModel)]="searchTerm" placeholder="Search...">
+    <select [(ngModel)]="searchType">
+      <option value="books">Books</option>
+      <option value="verses">Verses</option>
+    </select>
+    <button (click)="performSearch()">Search</button>
+  </div>
+  
+  <div class="search-results">
+    <div class="grid-container">
+      <div class="grid-item" *ngFor="let result of searchResults">
+        <!-- Check if it's a book or a verse -->
+        <ng-container *ngIf="searchType === 'books'; else verseTemplate">
+          <!-- Display book information -->
+          <app-card
+            [title]="result.title_short"
+            [fullTitle]="result.title_full"
+            [abbreviation]="result.abbreviation"
+            [category]="result.category"
+            [testament]="result.otnt"
+            [chapters]="result.chapters"
+            [order]="result.order"
+          ></app-card>
+        </ng-container>
+        <ng-template #verseTemplate>
+          <!-- Display verse information -->
+          <p>{{ result.t }}</p>
+        </ng-template>
+      </div>
+    </div>
+    <p *ngIf="searchResults.length === 0">No results found.</p>
+  </div>
+</div>
