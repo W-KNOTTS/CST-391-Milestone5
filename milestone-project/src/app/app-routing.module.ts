@@ -8,12 +8,14 @@ import { SearchComponent } from './search/search.component';
 import { CreateEntryComponent } from './create-entry/create-entry.component';
 import { DeleteBookComponent } from './delete-book/delete-book.component';
 import { IndexComponent } from '../index.component';
+import { VersesListComponent } from './verses-list/verses-list.component';
 
 const routes: Routes = [
   { path: 'books', component: BookListComponent },
   { path: 'text-bbe', component: TextBbeComponent },//tests
   { path: 'text-asv', component: TextAsvComponent },//tests
   { path: 'create-entry', component: CreateEntryComponent },
+  { path: 'verses', component: VersesListComponent },
   //{ path: '', redirectTo: '/', pathMatch: 'full' }, // Redirect to 'books' as default
   { path: 'delete-book', component: DeleteBookComponent },
   { path: 'search', component: SearchComponent },

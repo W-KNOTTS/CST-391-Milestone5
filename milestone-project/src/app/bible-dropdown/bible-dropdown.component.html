@@ -1,0 +1,15 @@
+<!-- bible-dropdown.component.html -->
+<div>
+    <button (click)="onSelectTestament('OT')">Old Testament</button>
+    <button (click)="onSelectTestament('NT')">New Testament</button>
+    <div *ngIf="books.length > 0">
+      <h3>Select a Book:</h3>
+      <ul>
+        <li *ngFor="let book of books" (click)="onSelectBook(book.id)">
+          {{ book.title }}
+        </li>
+      </ul>
+    </div>
+    <!-- Similar structures for chapters and verses -->
+  </div>
+  

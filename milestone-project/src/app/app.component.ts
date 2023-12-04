@@ -18,7 +18,6 @@ export class AppComponent {
   }
   performSearch(): void {
     if (this.searchTerm.trim()) {
-      // Navigate to search component or handle inline search
       this.router.navigate(['/search'], { queryParams: { q: this.searchTerm } });
     }
   }

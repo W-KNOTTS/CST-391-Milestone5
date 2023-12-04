@@ -1,9 +1,17 @@
 <!-- book-list.component.html -->
-<link rel="stylesheet" href="./book-list.component.css">
 <div class="container mt-4">
   <h5>List of all Books in the Bible</h5>
+  
+  <!-- Toggle Buttons -->
+  <div class="btn-group mb-4" role="group" aria-label="Testament Toggle">
+    <button type="button" class="btn btn-secondary" (click)="onTestamentChange('OT')">Old Testament</button>
+    <button type="button" class="btn btn-secondary" (click)="onTestamentChange('NT')">New Testament</button>
+    <button type="button" class="btn btn-secondary" (click)="onTestamentChange('Both')">Both</button>
+  </div>
+
+  <!-- Books List -->
   <div class="row">
-    <div class="col-lg-4 col-md-6 mb-4" *ngFor="let book of books">
+    <div class="col-lg-4 col-md-6 mb-4" *ngFor="let book of filteredBooks; trackBy: trackByFn">
       <app-card
         [title]="book.title_short"
         [fullTitle]="book.title_full"
@@ -12,7 +20,8 @@
         [testament]="book.otnt"
         [chapters]="book.chapters"
         [order]="book.order"
-      ></app-card>
+        [displayTestament]="selectedTestament">
+      </app-card>
     </div>
   </div>
 </div>

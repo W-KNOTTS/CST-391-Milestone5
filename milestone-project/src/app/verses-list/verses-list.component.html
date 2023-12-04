@@ -1,0 +1,17 @@
+<!--verses-list.component.html-->
+<div class="container mt-4">
+    <h5>All Verses</h5>
+    <div class="row">
+      <div class="col-lg-4 col-md-6 mb-4" *ngFor="let verse of verses">
+        <div class="card h-100">
+          <div class="card-body">
+            <h5 class="card-title">Book: {{ verse.b }}</h5>
+            <p class="card-text">Chapter: {{ verse.c }}</p>
+            <p class="card-text">Verse: {{ verse.v }}</p>
+            <p class="card-text">Text: {{ verse.t }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  

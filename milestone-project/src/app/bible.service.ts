@@ -11,6 +11,14 @@ export class BibleService {
 
   constructor(private http: HttpClient) {}
 
+  getAllVerses(): Observable<any[]> {
+    return this.http.get<any[]>(`${this.apiUrl}/verses`);
+  }
+
+  //getVersesChunk(startIndex: number, limit: number): Observable<any[]> {
+  //  return this.http.get<any[]>(`${this.apiUrl}/verses?start=${startIndex}&limit=${limit}`);
+  //}
+
   // Fetch all books
   getBooks(): Observable<any[]> {
     return this.http.get<any[]>(`${this.apiUrl}/books`);
@@ -19,6 +27,10 @@ export class BibleService {
   // Fetch a specific book by its 'order'
   getBook(order: number): Observable<any> {
     return this.http.get<any>(`${this.apiUrl}/books/${order}`);
+  }
+
+  getBooksByTestament(testament: string): Observable<any[]> {
+    return this.http.get<any[]>(`${this.apiUrl}/books/${testament}`);
   }
 
   // Fetch specific chapter verses from a book

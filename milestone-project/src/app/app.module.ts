@@ -10,7 +10,10 @@ import { FormsModule } from '@angular/forms';
 import { CardComponent } from './shared/card/card.component';
 import { CreateEntryComponent } from './create-entry/create-entry.component';
 import { DeleteBookComponent } from './delete-book/delete-book.component';
-import { IndexComponent } from '../index.component'; 
+import { IndexComponent } from '../index.component';
+import { BibleDropdownComponent } from './bible-dropdown/bible-dropdown.component';
+import { VersesListComponent } from './verses-list/verses-list.component';
+import { VersesComponent } from './verses/verses.component'; 
 
 
 @NgModule({
@@ -22,12 +25,15 @@ import { IndexComponent } from '../index.component';
     CreateEntryComponent,
     DeleteBookComponent,
     IndexComponent,
+    BibleDropdownComponent,
+    VersesListComponent,
+    VersesComponent,
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
     FormsModule,
-    AppRoutingModule, // Make sure this is the last in the list of imports
+    AppRoutingModule,
 
   ],
   providers: [],

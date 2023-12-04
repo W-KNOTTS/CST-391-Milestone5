@@ -18,6 +18,26 @@ const pool = mysql.createPool({
     database: process.env.MY_SQL_DB_DATABASE
 });
 
+app.get('/api/verses', (req, res) => {
+    pool.query('SELECT * FROM t_asv', (error, results) => {
+      if (error) {
+        return res.status(500).json({ message: 'Error fetching verses', error });
+      }
+      res.json(results);
+    });
+  });
+
+//endpoint to get books by OT/NT
+app.get('/api/books/:testament', (req, res) => {
+    const testament = req.params.testament;
+    pool.query('SELECT * FROM book_info WHERE otnt = ?', [testament], (error, results) => {
+        if (error) return res.status(500).json(error);
+        res.json(results);
+    });
+});
+
+// Add other endpoints as needed for chapters and verses
+
 ///////////////// GET Endpoints /////////////////////////////////
 
 // GET all books

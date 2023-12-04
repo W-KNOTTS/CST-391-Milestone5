@@ -14,4 +14,9 @@ export class CardComponent {
   @Input() testament: string = '';
   @Input() chapters: string = '';
   @Input() order: string = '';
+  @Input() displayTestament: 'OT' | 'NT' | 'Both' = 'Both';
+
+  shouldDisplay(): boolean {
+    return this.displayTestament === 'Both' || this.displayTestament === this.testament;
+  }
 }
